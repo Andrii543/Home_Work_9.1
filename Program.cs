@@ -13,100 +13,100 @@ namespace Home_Work_9._1
             var rnd = new Random();
 
             const int arraysize = 3;
-            //int[] array = new int[arraysize];
+            int[] array = new int[arraysize];
 
-            //int maxValue = 0;
-            //int secondMaxValue = 0;
+            int maxValue = 0;
+            int secondMaxValue = 0;
 
-            //for (int i = 0; i < arraysize; i++)
-            //{
-            //    array[i] = rnd.Next(1, 100);
+            for (int i = 0; i < arraysize; i++)
+            {
+                array[i] = rnd.Next(1, 100);
 
-            //    if (array[i] > maxValue)
-            //    {
-            //        secondMaxValue = maxValue;
-            //        maxValue = array[i];
-            //    }
+                if (array[i] > maxValue)
+                {
+                    secondMaxValue = maxValue;
+                    maxValue = array[i];
+                }
 
-            //    if (array[i] > secondMaxValue && array[i] != maxValue)
-            //    {
-            //        secondMaxValue = array[i];
-            //    }
-            //}
-            //Console.WriteLine($"Рандомні числа в масиві {string.Join(",", array)}");
-            //Console.WriteLine($"Найбільше число {maxValue}, друге найбільше число {secondMaxValue}");
+                if (array[i] > secondMaxValue && array[i] != maxValue)
+                {
+                    secondMaxValue = array[i];
+                }
+            }
+            Console.WriteLine($"Рандомні числа в масиві {string.Join(",", array)}");
+            Console.WriteLine($"Найбільше число {maxValue}, друге найбільше число {secondMaxValue}");
 
 
 
             //Завдання 2 Написати програму, що буде сортувати за зростанням елементи двовимірного масиву.
 
 
-            //int[,] sorting = new int[arraysize, arraysize];
+            int[,] sorting = new int[arraysize, arraysize];
 
-            //int sortingValue = 0;
+            int sortingValue = 0;
 
-            //Console.WriteLine("Невідсортований двовимірний масив: ");
+            Console.WriteLine("Невідсортований двовимірний масив: ");
 
-            //for (int i = 0; i < arraysize; i++)
-            //{
-            //    for (int j = 0; j < arraysize; j++)
-            //    {
-            //        sorting[i, j] = rnd.Next(1, 100);
-            //        Console.Write($"{sorting[i,j]} ");
-            //    }
-            //    Console.WriteLine();
-            //}
+            for (int i = 0; i < arraysize; i++)
+            {
+                for (int j = 0; j < arraysize; j++)
+                {
+                    sorting[i, j] = rnd.Next(1, 100);
+                    Console.Write($"{sorting[i, j]} ");
+                }
+                Console.WriteLine();
+            }
 
-            ////Зробив з двовимірного масиву один масив щоб Array.Sort запрацював бо він приймає тільки одновимірні масиви
-            //// ми в одновимірному масиві зробили множення arraysize * arraysize тобто 3x3 = 9 у цьому випадку, щоб мав розмів як двовимірний масив
-            //int[] flatArray = new int[arraysize * arraysize];
-            //int index = 0;
-            //for (int i = 0;i < arraysize; i++)
-            //{
-            //    for(int j = 0;j < arraysize; j++)
-            //    {
-            //        flatArray[index] = sorting[i, j];
-            //        index++;
-            //    }
-            //}
+            //Зробив з двовимірного масиву один масив щоб Array.Sort запрацював бо він приймає тільки одновимірні масиви
+            // ми в одновимірному масиві зробили множення arraysize * arraysize тобто 3x3 = 9 у цьому випадку, щоб мав розмів як двовимірний масив
+            int[] flatArray = new int[arraysize * arraysize];
+            int index = 0;
+            for (int i = 0; i < arraysize; i++)
+            {
+                for (int j = 0; j < arraysize; j++)
+                {
+                    flatArray[index] = sorting[i, j];
+                    index++;
+                }
+            }
 
-            ////Сортування масивів за допомогою Array.Sort
-            //Array.Sort(flatArray);
+            //Сортування масивів за допомогою Array.Sort
+            Array.Sort(flatArray);
 
 
-            ////Тепер відсортований одновимірний масив записуємо у двовимірний
-            //index = 0;
-            //Console.WriteLine("Відсортований двовимірний масив: ");
-            //for (int i = 0; i < arraysize; i++)
-            //{
-            //    for (int j = 0; j < arraysize; j++)
-            //    {
-            //        sorting[i, j] = flatArray[index];
-            //        index++;
-            //        Console.Write($"{sorting[i,j]} ");
-            //    }
-            //    Console.WriteLine();
-            //}
+            //Тепер відсортований одновимірний масив записуємо у двовимірний
+            index = 0;
+            Console.WriteLine("Відсортований двовимірний масив: ");
+            for (int i = 0; i < arraysize; i++)
+            {
+                for (int j = 0; j < arraysize; j++)
+                {
+                    sorting[i, j] = flatArray[index];
+                    index++;
+                    Console.Write($"{sorting[i, j]} ");
+                }
+                Console.WriteLine();
+            }
 
-            // 3 Завдання Написати програму, що буде видаляти з масиву елемент за вказаним індексом.
+            //3 Завдання Написати програму, що буде видаляти з масиву елемент за вказаним індексом.
 
-            //int[] deleteElement = new int[arraysize];
-            //for (int i = 0; i < arraysize; i++)
-            //{
-            //    deleteElement[i] = rnd.Next(1,100);
+            int[] deleteElement = new int[arraysize];
+            for (int i = 0; i < arraysize; i++)
+            {
+                deleteElement[i] = rnd.Next(1, 100);
 
-            //    Console.WriteLine($"{deleteElement[i]} - {i} індекс");
-            //}
-            //Console.Write("Виберіть елемент по індексу який ви хочете видалити: ");
-            //int userInput = Convert.ToInt32( Console.ReadLine());
-            //for (int i = 0;i < arraysize; i++)
-            //{
-            //    if(userInput == i)
-            //    {
-            //        continue;
-            //    }
-            //    Console.WriteLine($"{deleteElement[i]}");
-            //}
+                Console.WriteLine($"{deleteElement[i]} - {i} індекс");
+            }
+            Console.Write("Виберіть елемент по індексу який ви хочете видалити: ");
+            int userInput = Convert.ToInt32(Console.ReadLine());
+            for (int i = 0; i < arraysize; i++)
+            {
+                if (userInput == i)
+                {
+                    continue;
+                }
+                Console.WriteLine($"{deleteElement[i]}");
+            }
 
             // 4 Завдання Написати програму, що буде знаходити суму елементів по діагоналі у двовимірному масиві.
 
